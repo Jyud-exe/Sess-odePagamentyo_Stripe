@@ -1,0 +1,9 @@
+{% extends "reprise.html" %} 
+{% block content %}
+
+    <a class="btn btn-dark" href="{{ url_for('pagamento', produto_id=1) }}">R$10</a>
+    <a class="btn btn-dark" href="{{ url_for('pagamento', produto_id=2) }}">R$30</a>
+    <a class="btn btn-dark" href="{{ url_for('pagamento', produto_id=3) }}">R$50</a>
+    
+
+{% endblock %}
