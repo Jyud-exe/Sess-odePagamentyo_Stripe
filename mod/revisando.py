@@ -12,13 +12,16 @@ def pag(produto_id):
     db.session.commit()
 
     sessao = stripe.checkout.Session.create(
-        payment_method_types=['card'],
+        payment_method_types = ['card'],
         line_items=[{
             'price_data':{
                 'currency': 'brl',
-                'product_data': {
+                'product_data':{
                     'name': produto.nome
-                }
-            }
+                },
+                'unit_amount': int(produto.preco * 100)
+            },
+            'quantity': 1
         }]
+
     )
